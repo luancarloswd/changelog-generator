@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 previous_tag=0
-urlProject=$(echo ${URL_REPO})
+urlProject=$(echo ${GIT_URL})
 git clone ${urlProject} /repo
 cd repo
-urlBaseProject=$(git remote get-url origin)
 
 nameProject=$(git config --local remote.origin.url|sed -n 's#.*/\([^.]*\)\.git#\1#p')
 
