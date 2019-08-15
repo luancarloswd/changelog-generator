@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 previous_tag=0
+urlProject=$(echo ${URL_REPO})
+git clone ${urlProject} /repo
+cd repo
 urlBaseProject=$(git remote get-url origin)
-urlProject=$(echo ${urlBaseProject/.git/''})
-nameProject=$(basename `git rev-parse --show-toplevel`)
+
+nameProject=$(git config --local remote.origin.url|sed -n 's#.*/\([^.]*\)\.git#\1#p')
 
 printf "# Changelog Project - [${nameProject}]($urlProject)\n\n\n"
 
