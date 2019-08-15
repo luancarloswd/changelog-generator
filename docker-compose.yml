@@ -1,0 +1,9 @@
+version: "3"
+services:
+  change-log:
+    image: "change-log"
+    environment:
+      - "GIT_EMAIL="
+      - "GIT_USER="
+      - "GIT_URL="
+      - "GIT_TOKEN="

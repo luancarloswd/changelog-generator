@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 previous_tag=0
-urlProject=$(echo ${GIT_URL})
-git clone ${urlProject} /repo
-cd repo
 
+urlProject=$(echo "https://${GIT_URL}")
 nameProject=$(git config --local remote.origin.url|sed -n 's#.*/\([^.]*\)\.git#\1#p')
 
 printf "# Changelog Project - [${nameProject}]($urlProject)\n\n\n"
