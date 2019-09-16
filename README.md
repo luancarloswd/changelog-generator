@@ -15,3 +15,22 @@ Raw component props (before transform):
 | GIT_EMAIL         | Email of user to commit | ✔️       |
 | GIT_URL           | Url of git project      | ✔️       |
 | GIT_BRANCH_SUBMIT | Name branch to commit   | ❌       |
+
+## Examples
+
+### GitLab
+
+```
+changelog:
+  image: luancarloshs/change-log
+  variables:
+    GIT_USER: ""
+    GIT_TOKEN: ""
+    GIT_EMAIL: ""
+    GIT_URL: ""
+    GIT_BRANCH_SUBMIT: ""
+  artifacts:
+    expire_in: 1 week
+  only:
+    - tags
+```
