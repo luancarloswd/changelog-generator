@@ -34,3 +34,25 @@ changelog:
   only:
     - tags
 ```
+
+### CircleCI
+
+```
+version: 2
+jobs:
+  changelog:
+    machine: true
+    docker:
+      - image: luancarloshs/change-log
+    environment:
+      GIT_USER: ""
+      GIT_TOKEN: ""
+      GIT_EMAIL: ""
+      GIT_URL: ""
+      GIT_BRANCH_SUBMIT: ""
+    steps:
+      - checkout
+      - save_cache:
+          paths:
+            - CHANGELOG.md
+```
