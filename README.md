@@ -31,8 +31,6 @@ changelog:
     GIT_BRANCH_SUBMIT: ""
   artifacts:
     expire_in: 1 week
-  only:
-    - tags
 ```
 
 ### CircleCI
@@ -55,4 +53,22 @@ jobs:
       - save_cache:
           paths:
             - CHANGELOG.md
+```
+
+### Bitbucket
+
+```
+pipelines:
+  default:
+    - step:
+        name: changelog
+        image: luancarloshs/change-log
+        environment:
+          GIT_USER: ""
+          GIT_TOKEN: ""
+          GIT_EMAIL: ""
+          GIT_URL: ""
+          GIT_BRANCH_SUBMIT: ""
+        artifacts:
+          - CHANGELOG.md
 ```
